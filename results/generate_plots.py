@@ -19,14 +19,9 @@ for mode in modes:
                 
 colors = dict(zip(modes, ['red', 'black', 'blue', 'green']))
 
-ax = plt.subplot()
-
-ax.set_edgecolor('black')  
-ax.set_linewidth('1')
-ax.xlabel('Server trace ID')
-ax.ylabel('Branch Prediction Accuracy (%)')
-ax.xticks(range(1, 6), [1, 2, 3, 4, 9])
-
+plt.xlabel('Server trace ID')
+plt.ylabel('Branch Prediction Accuracy (%)')
+plt.xticks(range(1, 6), [1, 2, 3, 4, 9])
 for mode in reversed(modes):
     plt.plot(trace_ids, dct[mode], label=mode, marker='o', color=colors[mode])
 
